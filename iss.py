@@ -54,7 +54,7 @@ def compute_rise_time(lat, lon):
     r = requests.get(base_url + '/iss-pass.json', params=params)
     r.raise_for_status()
 
-    passover_time = r.json()['response'][1]['risetime']
+    passover_time = r.json()['response'][0]['risetime']
     return time.ctime(passover_time)
 
 
